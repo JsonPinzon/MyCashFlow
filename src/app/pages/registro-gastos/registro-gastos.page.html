@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registro de Ingresos y Gastos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Registro de Ingresos y Gastos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form (submit)="onSubmit(form.value)" #form="ngForm">
+    <ion-item>
+      <ion-label>Cantidad</ion-label>
+      <ion-input type="number" name="cantidad" ngModel></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Categoría</ion-label>
+      <ion-select name="categoria" ngModel>
+        <ion-select-option value="comida">Comida</ion-select-option>
+        <ion-select-option value="transporte">Transporte</ion-select-option>
+        <ion-select-option value="ocio">Ocio</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Tipo</ion-label>
+      <ion-select name="tipo" ngModel>
+        <ion-select-option value="ingreso">Ingreso</ion-select-option>
+        <ion-select-option value="gasto">Gasto</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>Fecha</ion-label>
+      <ion-datetime display-format="MM/DD/YYYY" name="fecha" ngModel></ion-datetime>
+    </ion-item>
+    
+    <ion-button expand="full" type="submit">Guardar</ion-button>
+  </form>
+</ion-content>
+
