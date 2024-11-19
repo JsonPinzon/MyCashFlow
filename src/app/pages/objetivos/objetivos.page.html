@@ -4,10 +4,49 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+<ion-item>
+  <ion-avatar aria-hidden="true" slot="start">
+    <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+  </ion-avatar>
+  
+  
     <ion-toolbar>
-      <ion-title size="large">objetivos</ion-title>
+      
+        <p>User</p>
+        <h1> Maria Jimena</h1>
+      
+      <ion-buttons slot="primary">
+        <ion-button>
+          <ion-icon slot="end" name="pencil-sharp"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-toolbar>
-  </ion-header>
-</ion-content>
+  
+  
+
+</ion-item>
+
+<ion-content color="light">
+  <ion-list [inset]="true">
+    <ion-item [button]="true">
+      <ion-icon color="secondary" slot="start" name="folder" size="large"></ion-icon>
+      <ion-label>Cuentas</ion-label>
+      <ion-note slot="end">6</ion-note>
+    </ion-item>
+    <ion-item [button]="true">
+      <ion-icon color="secondary" slot="start" name="settings-sharp" size="large"></ion-icon>
+      <ion-label>Configuraciones</ion-label>
+      <ion-note slot="end">1</ion-note>
+    </ion-item>
+    <ion-item [button]="true">
+      <ion-icon color="tertiary" slot="start" name="download-sharp" size="large"></ion-icon>
+      <ion-label>Descargar Datos</ion-label>
+      <ion-note slot="end">15</ion-note>
+    </ion-item>
+    <ion-item [button]="true">
+      <ion-icon color="danger" slot="start" name="log-out-sharp" size="large"></ion-icon>
+      <ion-label>Salir</ion-label>
+      <ion-note slot="end"></ion-note>
+    </ion-item>
+  </ion-list>
+  </ion-content>
