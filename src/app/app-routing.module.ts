@@ -21,6 +21,14 @@ const routes: Routes = [
   {
     path: 'objetivos',
     loadChildren: () => import('./pages/objetivos/objetivos.module').then( m => m.ObjetivosPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   }
 ];
 @NgModule({
