@@ -1,13 +1,104 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>inicio</ion-title>
+    <ion-buttons slot="start">
+      <ion-avatar slot="start">
+        <img src="assets/img/profile.jpg" alt="Usuario">
+      </ion-avatar>
+    </ion-buttons>
+
+    <ion-title>Inicio</ion-title>
+
+    <ion-buttons slot="end">
+      <!-- Desplegable de meses -->
+      <ion-select interface="popover" placeholder="Mes">
+        <ion-select-option value="enero">Enero</ion-select-option>
+        <ion-select-option value="febrero">Febrero</ion-select-option>
+        <ion-select-option value="marzo">Marzo</ion-select-option>
+      </ion-select>
+
+      <ion-button>
+        <ion-icon name="notifications-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="greeting">
+    <h2>Hola, <span class="user-name">Nombre Usuario</span></h2>
+  </div>
+
+  <div class="balance-card">
+    <div class="balance-info">
+      <h3>Dinero disponible</h3>
+      <p class="amount">$1000</p>
+    </div>
+    <ion-button fill="clear" class="details-button">
+      <ion-icon name="arrow-forward-outline"></ion-icon>
+      Ver detalles
+    </ion-button>
+  </div>
+
+  <!-- Gráfica de gastos -->
+  <div class="expense-graph">
+    <ion-segment>
+      <ion-segment-button value="day">
+        Día
+      </ion-segment-button>
+      <ion-segment-button value="week">
+        Semana
+      </ion-segment-button>
+      <ion-segment-button value="month">
+        Mes
+      </ion-segment-button>
+    </ion-segment>
+    <!-- Gráfica va aquí -->
+  </div>
+
+  <div class="recent-transactions">
+    <h3>Transacciones recientes</h3>
+    <ion-list>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/img/transaction-icon.jpg" alt="Icono Transacción">
+        </ion-avatar>
+        <ion-label>
+          <h2>Compra de café</h2>
+          <p>Descripción de la compra</p>
+          <p class="transaction-amount">-$5.00</p>
+        </ion-label>
+        <ion-note slot="end">12:30 PM</ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/img/transaction-icon.jpg" alt="Icono Transacción">
+        </ion-avatar>
+        <ion-label>
+          <h2>Pago de suscripción</h2>
+          <p>Descripción del pago</p>
+          <p class="transaction-amount">-$15.00</p>
+        </ion-label>
+        <ion-note slot="end">1:15 PM</ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/img/transaction-icon.jpg" alt="Icono Transacción">
+        </ion-avatar>
+        <ion-label>
+          <h2>Compra online</h2>
+          <p>Descripción de la compra</p>
+          <p class="transaction-amount">-$50.00</p>
+        </ion-label>
+        <ion-note slot="end">3:00 PM</ion-note>
+      </ion-item>
+
+      <ion-item button>
+        <ion-label>
+          <h2>Ver todas</h2>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
