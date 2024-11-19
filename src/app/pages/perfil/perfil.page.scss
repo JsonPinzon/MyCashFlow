@@ -1,0 +1,27 @@
+ion-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+ion-avatar {
+  margin: 0 auto;
+}
+
+ion-card-title {
+  margin-top: 10px;
+}
+
+ion-list {
+  margin-top: 20px;
+}
+
+ion-item {
+  --padding-start: 20px;
+  --inner-padding-end: 20px;
+}
+
+ion-footer {
+  --background: #f8f8f8;
+}
