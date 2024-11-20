@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FirestoreService } from '../../services/firestore.service';
 
 @Component({
   selector: 'app-login',
@@ -6,23 +7,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  passwordVisible = false;
+  loginData = {
+    email: '',
+    password: '',
+  };
 
-  constructor() {}
+  constructor(private firestoreService: FirestoreService) {}
 
-  onLogin() {
-    console.log('Iniciar sesión con correo y contraseña');
-  }
+  async onLogin() {
+    const { email, password } = this.loginData;
 
-  onLoginWithGoogle() {
-    console.log('Iniciar sesión con Google');
-  }
+    if (!email || !password) {
+      console.error('Por favor, completa todos los campos.');
+      return;
+    }
 
-  onRegister() {
-    console.log('Redirigir al registro');
-  }
-
-  togglePasswordVisibility() {
-    this.passwordVisible = !this.passwordVisible;
+    try {
+      const user = await this.firestoreService.loginUser(email, password);
+      console.log('Usuario autenticado:', user);
+    } catch (error) {
+      console.error('Error al iniciar sesión:', error);
+    }
   }
 }
