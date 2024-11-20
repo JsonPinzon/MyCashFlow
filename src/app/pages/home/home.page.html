@@ -5,7 +5,6 @@
         <img src="assets/img/profile.jpg" alt="Usuario">
       </ion-avatar>
     </ion-buttons>
-
     <ion-title>Inicio</ion-title>
 
     <ion-buttons slot="end">
@@ -31,7 +30,7 @@
   <div class="balance-card">
     <div class="balance-info">
       <h3>Dinero disponible</h3>
-      <p class="amount">$1000</p>
+      <p class="amount">{{ balance$ | async | json }}</p>
     </div>
     <ion-button fill="clear" class="details-button">
       <ion-icon name="arrow-forward-outline"></ion-icon>
@@ -39,7 +38,6 @@
     </ion-button>
   </div>
 
-  <!-- Gráfica de gastos -->
   <div class="expense-graph">
     <ion-segment>
       <ion-segment-button value="day">
@@ -52,46 +50,21 @@
         Mes
       </ion-segment-button>
     </ion-segment>
-    <!-- Gráfica va aquí -->
   </div>
 
   <div class="recent-transactions">
     <h3>Transacciones recientes</h3>
     <ion-list>
-      <ion-item>
+      <ion-item *ngFor="let transaction of transactions$ | async">
         <ion-avatar slot="start">
           <img src="assets/img/transaction-icon.jpg" alt="Icono Transacción">
         </ion-avatar>
         <ion-label>
-          <h2>Compra de café</h2>
-          <p>Descripción de la compra</p>
-          <p class="transaction-amount">-$5.00</p>
+          <h2>{{ transaction.name }}</h2>
+          <p>{{ transaction.description }}</p>
+          <p class="transaction-amount">{{ transaction.amount | currency }}</p>
         </ion-label>
-        <ion-note slot="end">12:30 PM</ion-note>
-      </ion-item>
-
-      <ion-item>
-        <ion-avatar slot="start">
-          <img src="assets/img/transaction-icon.jpg" alt="Icono Transacción">
-        </ion-avatar>
-        <ion-label>
-          <h2>Pago de suscripción</h2>
-          <p>Descripción del pago</p>
-          <p class="transaction-amount">-$15.00</p>
-        </ion-label>
-        <ion-note slot="end">1:15 PM</ion-note>
-      </ion-item>
-
-      <ion-item>
-        <ion-avatar slot="start">
-          <img src="assets/img/transaction-icon.jpg" alt="Icono Transacción">
-        </ion-avatar>
-        <ion-label>
-          <h2>Compra online</h2>
-          <p>Descripción de la compra</p>
-          <p class="transaction-amount">-$50.00</p>
-        </ion-label>
-        <ion-note slot="end">3:00 PM</ion-note>
+        <ion-note slot="end">{{ transaction.date | date:'shortTime' }}</ion-note>
       </ion-item>
 
       <ion-item button>
