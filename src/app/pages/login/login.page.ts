@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { FirestoreService } from '../../services/firestore.service';
 
 @Component({
@@ -12,7 +13,12 @@ export class LoginPage {
     password: '',
   };
 
-  constructor(private firestoreService: FirestoreService) {}
+  passwordVisible = false;
+  constructor(private firestoreService: FirestoreService, private router: Router) {}
+
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
 
   async onLogin() {
     const { email, password } = this.loginData;
@@ -28,5 +34,19 @@ export class LoginPage {
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
     }
+  }
+
+  onRegister() {
+    this.router.navigate(['/register']);
+  }
+
+  onLoginWithGoogle() {
+    this.firestoreService.registerWithGoogle()
+      .then(user => {
+        console.log('Usuario autenticado con Google:', user);
+      })
+      .catch(error => {
+        console.error('Error al iniciar sesión con Google:', error);
+      });
   }
 }
