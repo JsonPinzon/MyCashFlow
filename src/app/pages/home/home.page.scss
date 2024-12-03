@@ -1,140 +1,171 @@
 ion-header {
-    ion-toolbar {
-      ion-avatar {
-        img {
-          border-radius: 50%;
-          width: 40px;
-          height: 40px;
-          object-fit: cover;
-        }
-      }
-  
-      ion-select {
-        margin-right: 8px;
-      }
-  
-      ion-button {
-        ion-icon {
-          font-size: 1.5rem;
-        }
-      }
-    }
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+ion-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+ion-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+ion-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+ion-select {
+  max-width: 120px;
+}
+
+ion-button {
+  margin-left: 10px;
+}
+
+.greeting {
+  padding: 20px;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+.greeting h2 {
+  font-size: 1.75rem;
+  color: #333;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #3a8dff;
+}
+
+.balance-card {
+  margin: 20px 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.balance-info h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.amount {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.details-button {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #3a8dff;
+}
+
+.expense-graph {
+  margin: 20px 15px;
+  text-align: center;
+}
+
+ion-segment-button {
+  font-size: 1rem;
+}
+
+.recent-transactions {
+  margin: 20px 15px;
+}
+
+.recent-transactions h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+ion-list {
+  margin-top: 10px;
+}
+
+ion-item {
+  --min-height: 70px;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+ion-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+ion-label h2 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+ion-label p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.transaction-amount {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+ion-note {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+ion-item.button {
+  background-color: #f8f8f8;
+  text-align: center;
+  border: none;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+ion-item.button:hover {
+  background-color: #e0e0e0;
+}
+
+ion-item.button ion-label h2 {
+  font-size: 1.1rem;
+  color: #3a8dff;
+}
+
+/* Responsividad para pantallas más grandes (Desktop) */
+@media (min-width: 768px) {
+  ion-toolbar {
+    padding: 15px 30px;
   }
-  
-  ion-content {
-    .greeting {
-      text-align: center;
-      margin: 16px 0;
-  
-      h2 {
-        font-size: 1.8rem;
-        color: #333;
-  
-        .user-name {
-          font-weight: bold;
-          color: #0078d7;
-        }
-      }
-    }
-  
-    .balance-card {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: #0078d7;
-      color: #fff;
-      border-radius: 8px;
-      padding: 16px;
-      margin: 16px;
-  
-      .balance-info {
-        h3 {
-          font-size: 1.2rem;
-          margin: 0 0 8px;
-        }
-  
-        .amount {
-          font-size: 2rem;
-          font-weight: bold;
-        }
-      }
-  
-      .details-button {
-        --color: #fff;
-        --icon-size: 1.5rem;
-      }
-    }
-  
-    .expense-graph {
-      margin: 16px;
-  
-      ion-segment {
-        --indicator-color: #0078d7;
-        --background: #f8f9fa;
-      }
-  
-      ion-segment-button {
-        --color-checked: #0078d7;
-        --indicator-color: #0078d7;
-      }
-    }
-  
-    .recent-transactions {
-      margin: 16px;
-  
-      h3 {
-        font-size: 1.4rem;
-        margin-bottom: 8px;
-        color: #333;
-      }
-  
-      ion-list {
-        ion-item {
-          margin: 8px 0;
-          border-radius: 8px;
-          --background: #f8f9fa;
-  
-          ion-avatar img {
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            object-fit: cover;
-          }
-  
-          ion-label {
-            h2 {
-              font-size: 1rem;
-              margin: 0;
-            }
-  
-            p {
-              font-size: 0.85rem;
-              color: #666;
-  
-              &.transaction-amount {
-                color: #e63946;
-                font-weight: bold;
-                margin-top: 4px;
-              }
-            }
-          }
-  
-          ion-note {
-            font-size: 0.85rem;
-            color: #999;
-          }
-  
-          &:last-of-type {
-            ion-label {
-              h2 {
-                text-align: center;
-                font-size: 1rem;
-                color: #0078d7;
-              }
-            }
-          }
-        }
-      }
-    }
+
+  .greeting h2 {
+    font-size: 2rem;
   }
-  
+
+  .balance-card {
+    max-width: 600px;
+    margin: 30px auto;
+  }
+
+  .recent-transactions h3 {
+    font-size: 1.5rem;
+  }
+}

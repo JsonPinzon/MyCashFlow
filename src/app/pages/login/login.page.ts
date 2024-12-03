@@ -36,7 +36,8 @@ export class LoginPage {
     }
   }
 
-  onRegister() {
+  onRegister(event: Event) {
+    event.preventDefault(); 
     this.router.navigate(['/register']);
   }
 
