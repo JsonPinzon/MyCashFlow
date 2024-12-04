@@ -3,6 +3,14 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: '',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
+  },
+  {
     path: 'inicio',
     loadChildren: () => import('./pages/inicio/inicio.module').then(m => m.InicioPageModule)
   },
@@ -17,10 +25,6 @@ const routes: Routes = [
   {
     path: 'objetivos',
     loadChildren: () => import('./pages/objetivos/objetivos.module').then(m => m.ObjetivosPageModule)
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'register',

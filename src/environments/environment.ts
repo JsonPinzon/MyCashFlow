@@ -11,7 +11,7 @@ export const environment = {
     storageBucket: "control-gastos-app.appspot.com",
     messagingSenderId: "ControlGastosPoli123",
     appId: "1:123456789012:web:abcd1234efgh5678"
-    }
+  }
 };
 
 /*

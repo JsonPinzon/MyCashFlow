@@ -1,0 +1,159 @@
+// Variables para colores
+/*$primary-color: #3880ff;
+$secondary-color: #3dc2ff;
+$text-color: #222;
+$background-color: #f4f5f8;
+$card-background: #ffffff;*/
+$border-radius: 10px;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+ion-header {
+  color: white;
+  --box-shadow: none;
+}
+
+ion-content {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  span {
+    font-size: 18px;
+  }
+
+  ion-icon {
+    font-size: 24px;
+  }
+}
+
+.balance {
+  padding: 20px;
+
+  box-shadow: $box-shadow;
+  text-align: center;
+  margin-bottom: 20px;
+
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
+  h1 {
+    margin: 10px 0 0;
+  }
+}
+
+.expenses {
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  text-align: center;
+  margin-bottom: 20px;
+
+  h3 {
+    margin: 0 0 10px;
+  }
+
+  img {
+    width: 100%;
+    border-radius: $border-radius;
+  }
+}
+
+.grafica-gastos {
+  width: 300px;
+  height: 150px;
+}
+
+.transactions {
+  padding: 20px;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  margin-bottom: 20px;
+
+  h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 10px;
+
+    ion-button {
+      --background: none;
+      --padding-start: 0;
+      --padding-end: 0;
+      font-size: 14px;
+    }
+  }
+
+  .transaction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .transaction-details {
+      flex: 1;
+      margin: 0 10px;
+
+      p {
+        margin: 0;
+
+        &:first-child {
+          font-weight: bold;
+        }
+
+        &:last-child {
+          font-size: 14px;
+          color: #666;
+        }
+      }
+    }
+
+    .transaction-amount {
+      text-align: right;
+
+      p {
+        margin: 0;
+
+        &:first-child {
+          font-weight: bold;
+          color: red($color: #000000);
+        }
+
+        &:last-child {
+          font-size: 14px;
+          color: #666;
+        }
+      }
+    }
+  }
+}
+
+ion-tab-bar {
+  margin-top: auto;
+  border-top: 1px solid #ddd;
+}
+
+ion-tab-button {
+  --padding: 20px 0;
+}

@@ -1,12 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Storage } from '@ionic/storage-angular';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
-import { environment } from '../../../src/environments/environment';
-
-firebase.initializeApp(environment.firebaseConfig);
 
 @Injectable({
   providedIn: 'root'
@@ -37,4 +31,9 @@ export class GastosService {
       await this.storage.set('ingresos', ingresos);
     }
   }
+
+  postGasto(gasto: { cantidad: number; categoria: string; descripcion: string; fecha: Date }) {
+    sessionStorage.setItem('gasto', JSON.stringify(gasto))
+  }
+
 }

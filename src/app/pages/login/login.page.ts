@@ -1,52 +1,25 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { FirestoreService } from '../../services/firestore.service';
-
+import { Component, } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router'
 @Component({
-  selector: 'app-login',
+  selector: 'app-inicio',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
-  loginData = {
-    email: '',
-    password: '',
-  };
 
-  passwordVisible = false;
-  constructor(private firestoreService: FirestoreService, private router: Router) {}
+  loginForm: FormGroup
 
-  togglePasswordVisibility() {
-    this.passwordVisible = !this.passwordVisible;
+  constructor(private fb: FormBuilder, private router: Router) {
+    this.loginForm = this.fb.group(
+      { email: ['', [Validators.required, Validators.email]], password: ['', [Validators.required, Validators.minLength(6)]], })
   }
 
-  async onLogin() {
-    const { email, password } = this.loginData;
-
-    if (!email || !password) {
-      console.error('Por favor, completa todos los campos.');
-      return;
+  onSubmit() {
+    this.router.navigate(['/inicio'])
+    if (this.loginForm.valid) {
+      console.log('Form Submitted!', this.loginForm.value)
+      this.router.navigate(['/inicio'])
     }
-
-    try {
-      const user = await this.firestoreService.loginUser(email, password);
-      console.log('Usuario autenticado:', user);
-    } catch (error) {
-      console.error('Error al iniciar sesión:', error);
-    }
-  }
-
-  onRegister() {
-    this.router.navigate(['/register']);
-  }
-
-  onLoginWithGoogle() {
-    this.firestoreService.registerWithGoogle()
-      .then(user => {
-        console.log('Usuario autenticado con Google:', user);
-      })
-      .catch(error => {
-        console.error('Error al iniciar sesión con Google:', error);
-      });
   }
 }

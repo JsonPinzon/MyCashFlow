@@ -1,13 +1,112 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>inicio</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Página de Inicio
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">inicio</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <div class="header">
+          <img src="assets/profile.png" (click)="onProfileClick()" alt="Imagen de Perfil" class="profile-img">
+          <span>Diciembre</span>
+          <ion-icon name="notifications-outline"></ion-icon>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <div class="balance">
+          <h2>Hola, María</h2>
+          <p>Disponible</p>
+          <h1>$345,520</h1>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <div class="expenses">
+          <h3>Gastos</h3>
+          <img src="assets/graf.png" alt=" Gráfica de Gastos" class="grafica-gastos">
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <div class="transactions">
+          <h3>Transacciones <ion-button fill="clear" size="small" color="primary">Ver todas</ion-button></h3>
+          <div class="transaction">
+            <img src="assets/carro.png" alt="Supermercado">
+            <div class="transaction-details">
+              <p>Supermercado</p>
+              <p>Fruta para el desayuno</p>
+            </div>
+            <div class="transaction-amount">
+              <p>-$120,000</p>
+              <p>10:00 AM</p>
+            </div>
+          </div>
+          <div class="transaction">
+            <img src="assets/task.png" alt="Subscripción">
+            <div class="transaction-details">
+              <p>Subscripción</p>
+              <p>Disney plus</p>
+            </div>
+            <div class="transaction-amount">
+              <p>-$40,000</p>
+              <p>03:30 PM</p>
+            </div>
+          </div>
+          <div class="transaction">
+            <img src="assets/food.png" alt="Comida">
+            <div class="transaction-details">
+              <p>Comida</p>
+              <p>Almuerzo</p>
+            </div>
+            <div class="transaction-amount">
+              <p>-$37,000</p>
+              <p>01:30 PM</p>
+            </div>
+          </div>
+
+          <div class="transaction" *ngIf="gasto && gasto.cantidad">
+            <img src="assets/food.png" alt="Comida">
+            <div class="transaction-details">
+              <p>{{gasto.categoria | titlecase}}</p>
+              <p>{{gasto.descripcion}}</p>
+            </div>
+            <div class="transaction-amount">
+              <p>{{gasto.cantidad}}</p>
+              <p>{{gasto.fecha}}</p>
+            </div>
+          </div>
+
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+
+<ion-footer>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home" (click)="navegacion('home')">
+      <ion-icon name="home-outline" (click)="navegacion('home')"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="add" (click)="navegacion('registro')">
+      <ion-icon name="add-circle-outline"></ion-icon>
+    </ion-tab-button>
+    <ion-tab-button tab="profile">
+      <ion-icon name="person"></ion-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

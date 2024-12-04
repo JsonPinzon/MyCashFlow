@@ -1,0 +1,53 @@
+.fecha-label {
+  margin-bottom: 10px;
+}
+/* Asegúrate de que ion-content ocupe toda la altura disponible */
+ion-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Estilo para el formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+/* Estilo para los elementos del formulario */
+ion-item {
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  --background: transparent;
+}
+
+/* Estilo para los labels */
+ion-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Ajusta los inputs, selects y datetimes para que ocupen todo el ancho disponible */
+ion-input,
+ion-select,
+ion-datetime {
+  width: 100%;
+}
+
+/* Estilo para el botón */
+ion-button {
+  margin-top: 20px;
+  --border-radius: 20px;
+  --background: #3880ff;
+  font-weight: bold;
+}
+
+ion-title {
+  font-size: x-large;
+}
