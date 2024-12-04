@@ -20,11 +20,12 @@
     <ion-button expand="full" type="submit" (click)="onSubmit()">Ingresar</ion-button>
   </form>
 
-  <ion-item lines="none">
-    <ion-label>
-      <a href="#">¿Olvidaste tu contraseña?</a>
-    </ion-label>
-  </ion-item>
+  <ion-text color="medium">
+    <p text-center>
+      ¿Aún no tienes cuenta?
+      <a href="#" (click)="onRegister($event)">Regístrate</a>
+    </p>
+  </ion-text>
 
   <ion-item lines="none">
     <ion-label>

@@ -1,163 +1,109 @@
-:host {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
-    color: #333;
-  }
-  
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+ion-card {
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+ion-card-header {
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+ion-card-title {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+ion-item {
+  margin-bottom: 20px;
+}
+
+ion-label {
+  font-size: 1rem;
+  color: #555;
+}
+
+ion-input {
+  font-size: 1rem;
+}
+
+ion-checkbox {
+  margin-top: 8px;
+}
+
+.register-button {
+  background-color: #3a8dff;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.google-button {
+  background-color: white;
+  color: #3a8dff;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #3a8dff;
+}
+
+.google-button ion-icon {
+  margin-right: 10px;
+}
+
+ion-text p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.divider span {
+  background-color: white;
+  padding: 0 10px;
+  color: #666;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
   .register-container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-  }
-  
-  ion-card {
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  ion-card-header {
-    text-align: center;
-    padding: 10px 0;
-  }
-  
-  ion-card-title {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  ion-item {
-    --background: transparent;
-    --border-radius: 8px;
-    border: 1px solid #ddd;
-    margin: 15px 0;
-  }
-  
-  ion-label {
-    font-size: 0.9rem;
-    color: #777;
-  }
-  
-  ion-input {
-    font-size: 0.95rem;
-  }
-  
-  ion-icon {
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: #007bff;
-  
-    &:hover {
-      color: #0056b3;
-    }
-  }
-  
-  .register-button {
-    margin-top: 20px;
-    --background: #007bff;
-    --background-hover: #0056b3;
-    --background-activated: #003f7f;
-    --color: #fff;
-    --border-radius: 20px;
-    font-size: 1rem;
-    font-weight: bold;
-  }
-  
-  ion-checkbox {
-    --background-checked: #007bff;
-    --border-color: #ddd;
-  }
-  
-  ion-checkbox + ion-label {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #555;
-  
-    a {
-      color: #007bff;
-      font-weight: bold;
-  
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
-  
-  .divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
-    position: relative;
-  }
-  
-  .divider span {
-    background-color: #fff;
-    padding: 0 10px;
-    font-size: 0.9rem;
-    color: #777;
-  }
-  
-  .divider::before,
-  .divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: #ddd;
-    margin: 0 10px;
-  }
-  
-  .google-button {
-    --background: #fff;
-    --color: #333;
-    border: 1px solid #ddd;
-  
-    ion-icon {
-      color: #4285f4;
-      font-size: 1.2rem;
-    }
-  
-    &:hover {
-      --background: #f2f2f2;
-    }
-  }
-  
-  ion-text {
-    font-size: 0.9rem;
-    color: #555;
-    margin-top: 15px;
-  }
-  
-  a {
-    color: #007bff;
-    font-weight: bold;
-  
-    &:hover {
-      text-decoration: underline;
-    }
+    padding: 40px;
   }
 
-  @media (min-width: 768px) {
-    .register-container {
-      padding: 40px;
-    }
-  
-    ion-card-title {
-      font-size: 2rem;
-    }
-  
-    ion-item {
-      margin: 20px 0;
-    }
-  
-    .register-button,
-    .google-button {
-      font-size: 1.1rem;
-      padding: 14px 0;
-    }
+  ion-card {
+    max-width: 600px;
   }
-  
+
+  ion-card-header {
+    text-align: center;
+    font-size: 1.8rem;
+  }
+
+  ion-card-title {
+    font-size: 1.8rem;
+    color: #333;
+  }
+
+  ion-button {
+    font-size: 1rem;
+  }
+
+  .google-button {
+    margin-top: 10px;
+  }
+}

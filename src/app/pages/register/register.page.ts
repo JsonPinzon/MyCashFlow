@@ -35,7 +35,8 @@ export class RegisterPage {
     console.log('Abrir política de privacidad');
   }
 
-  onLogin() {
+  onLogin(event: Event) {
+    event.preventDefault();
     this.router.navigate(['/login']);
   }
 
